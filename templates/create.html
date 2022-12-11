@@ -1,0 +1,19 @@
+{% block content %}
+    <h1>{% block title %} Add a New Player {% endblock %}</h1>
+    <form method="post">
+        <label>Player Name: </label>
+        <br>
+        <input type="text" name="name"
+               placeholder="Player Name"
+               value="{{ request.form['name'] }}">
+        <br>
+
+        <label>Team name: </label>
+        <br>
+        <input type="text" name="team"
+               placeholder="Player Team"
+               value="{{ request.form['team'] }}">
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+{% endblock %}

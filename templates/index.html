@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{% block title %} Teams {% endblock %}</h1>
+    {% for team in teams %}
+        <div class='post'>
+            <p>{{ team['name'] }}</p>
+            <p>{% for player in players %}
+                {% if player['team'] == team['name'] %}
+                    {{ player['name']+", " }}
+                {% endif %}
+            {% endfor %}</p>
+        </div>
+    {% endfor %}
+{% endblock %}
